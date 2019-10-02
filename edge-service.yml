@@ -1,22 +1,24 @@
 server:
   port: 8765
-logging:
-  level.org.springframework: info
 
 spring:
   application:
-    name:edge-service
+    name: edge-service
 
 zuul:
   routes:
-    users-service:
-      path: /api/users/**
-      serviceId: user-service
+    item-service:
+      path: /items/**
+      serviceId: item-service
       stripPrefix: false
     order-service:
-      path: /orders/**
+      path: /order/**
       serviceId: order-service
       stripPrefix: false
+
+logging:
+  level.org.springframework: trace
+
 management:
   endpoints:
     web:
