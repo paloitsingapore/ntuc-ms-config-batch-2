@@ -15,7 +15,11 @@ zuul:
       path: /order/**
       serviceId: order-service
       stripPrefix: false
-
+    myservice:
+      path: /myservice/**
+      serviceId: myservice
+      url: https://httpbin.org/
+      
 logging:
   level.org.springframework: info
 
